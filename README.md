@@ -12,7 +12,7 @@ STLs. Everything in this repo (figures, build guide, BOM, renders) is derived fr
 Printed in dark gray ASA with a purple accent band (4OGS livery) on a Bambu Lab P1S.
 
 Firmware for the logger and the dash display lives in [ztraction/4OGSDash](https://github.com/ztraction/4OGSDash)
-(private at the time of writing). This repo is the hardware side only: enclosure, display mount, build docs.
+(private at the time of writing). This repo is the hardware side only: the logger enclosure and its build docs.
 
 ## Status
 
@@ -43,7 +43,6 @@ Firmware for the logger and the dash display lives in [ztraction/4OGSDash](https
 | [`mechanical/assemble.py`](mechanical/assemble.py) | Builds the Onshape assemblies (enclosure parts + real board models placed per the layout) |
 | [`mechanical/render_stl.py`](mechanical/render_stl.py), [`render_v2.py`](mechanical/render_v2.py) | pyvista renders from the STLs |
 | [`mechanical/assembly_figures.py`](mechanical/assembly_figures.py) | Draws the annotated maps in `docs/assembly/` |
-| [`mechanical/display/`](mechanical/display/) | Display mount: backpack, GoPro puck and bench stand for the 7 in Waveshare touch display (see below) |
 
 Onshape document: https://cad.onshape.com/documents/1b4839c0672e56d3fe2d75a5 (Part Studio 1 holds the custom feature
 "Race logger enclosure"; assemblies "Enclosure v1 (GoPro base)", "Enclosure race (bar clamp)", "Enclosure v2 (analog tray)").
@@ -90,16 +89,11 @@ rejected (Onshape fails on them). A failing check exits before anything is pushe
 Onshape's personal API allocation is small (2,500 requests per year). The scripts are written to spend it carefully:
 `--dry` and `--local` cost nothing, an export costs one call per part, and `assemble.py` costs about 25 per assembly.
 
-## Display mount (Waveshare ESP32-S3-Touch-LCD-7B)
+## Related
 
-![Display mount](mechanical/display/output/renders/asm_front_iso.png)
-
-The dash display that shows the logger's data over ESP-NOW gets the same treatment: a backpack that bolts to the
-display's four M3 frame lugs, a GoPro puck that nests in its rear face, a bench stand, and a depth coupon that found the
-right M3 length for the lugs. Same generated pipeline, its own Onshape document and FeatureScript
-(`mechanical/display/display_mount.fs`), all parts print flat without supports. Everything is in
-[`mechanical/display/`](mechanical/display/) with its own [README](mechanical/display/README.md) (print table, hardware,
-assembly, design notes, pipeline) and STLs under [`mechanical/display/output/`](mechanical/display/output/).
+- Display mount for the 7 in Waveshare touch panel that shows this logger's data:
+  [zredlined/waveshare-7b-race-display-mount](https://github.com/zredlined/waveshare-7b-race-display-mount), same generated pipeline and design language.
+- Firmware: [ztraction/4OGSDash](https://github.com/ztraction/4OGSDash).
 
 ## Design notes worth reading first
 
@@ -110,5 +104,8 @@ assembly, design notes, pipeline) and STLs under [`mechanical/display/output/`](
 ## Attribution
 
 Board outlines, hole patterns and connector positions come from Adafruit's published Eagle and CAD files
-(`mechanical/reference/`, CC BY-SA 4.0, Adafruit Industries). The Waveshare display model comes from the Waveshare wiki.
-The 4OGS wordmark belongs to the 4OGS Racing team. No license has been chosen for the design files in this repo yet.
+(`mechanical/reference/`, CC BY-SA 4.0, Adafruit Industries). The 4OGS wordmark belongs to the 4OGS Racing team.
+
+## License
+
+MIT, see [LICENSE](LICENSE). The Adafruit reference files keep their own CC BY-SA 4.0 terms.
