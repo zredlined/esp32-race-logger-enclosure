@@ -1,0 +1,26 @@
+project: ESP32 race logger enclosure
+shipping_estimate: 0.00
+items:
+  - {name: ESP32-S3 Feather 4MB Flash 2MB PSRAM, vendor: adafruit, pid: 5477, qty: 1, owned: true, note: controller}
+  - {name: Adalogger FeatherWing RTC + microSD, vendor: adafruit, pid: 2922, qty: 1, owned: true, note: storage + RTC}
+  - {name: Feather stacking headers, vendor: adafruit, pid: 2830, qty: 1, owned: true, note: on the Feather (bottom of stack)}
+  - {name: Feather stacking headers (2nd set), vendor: adafruit, pid: 2830, qty: 1, note: needed on the Adalogger so the OLED Wing can sit on top; a 3-board stack needs sockets on two boards}
+  - {name: Mini GPS PA1010D STEMMA QT, vendor: adafruit, pid: 4415, qty: 1, owned: true, note: GPS, sky facing}
+  - {name: LSM6DSOX 6-DoF IMU, vendor: adafruit, pid: 4438, qty: 1, owned: true, note: IMU, aligned to car axes}
+  - {name: SHT41 temp/humidity STEMMA QT, vendor: adafruit, pid: 5776, qty: 1, owned: true, note: ambient sensor per recent order (firmware says HDC3022 5989, same footprint), needs airflow slot}
+  - {name: Assembled FeatherWing OLED 128x64 STEMMA QT (SH1107, 3 buttons), vendor: adafruit, pid: 6313, qty: 1, owned: true, note: display + buttons, top of Feather stack}
+  - {name: STEMMA QT cable 100 mm, vendor: adafruit, pid: 4210, qty: 3, owned: true, note: OLED->GPS, GPS->IMU, IMU->SHT41; 50 mm may fit two hops, decided in layout}
+  - {name: STEMMA QT cable 200 mm, vendor: adafruit, pid: 4401, qty: 1, note: OLED Wing -> GPS hop runs down the left wall (~130 mm route)}
+  - {name: CR1220 coin cell for RTC, vendor: adafruit, pid: 380, qty: 1, note: Adalogger RTC backup}
+  - {name: M2.5 heat-set inserts, vendor: other, url: https://www.mcmaster.com/94180A321/, qty: 12, price: 0.30, owned: true, note: owned}
+  - {name: M2.5 screws assorted, vendor: other, url: https://www.mcmaster.com/, qty: 12, price: 0.10, owned: true, note: owned}
+  - {name: M2 x 6 screws (Feather far-end holes), vendor: other, url: https://www.mcmaster.com/, qty: 2, price: 0.10, owned: true, note: user has M2}
+  # v2 analog tray
+  - {name: ADS1115 16-bit ADC STEMMA QT (x2, stacked in the tray), vendor: adafruit, pid: 1085, qty: 2, note: addresses 0x48 and 0x49}
+  - {name: 'ALTERNATIVE: Weewooday ADS1115 header modules, 6-pack (use 2 on the proto board instead of the Adafruit pair)', vendor: other, url: https://www.amazon.com/dp/B0DP43DDZG, qty: 0, price: 19.99, note: no STEMMA QT; mount on the perma-proto, feed with an owned 150 mm JST-to-header pigtail; reviews report genuine 16-bit parts}
+  - {name: DIKAVS Perma-Proto half-size solderable breadboard (5-pack), vendor: other, url: https://amazon.com/DIKAVS-Full-Sized-Perma-Proto-Breadboard-Solder-able/dp/B09ZPGGVSR, qty: 1, price: 12.00, owned: true, note: ordered 2026-10-02; 51 x 81.5 mm, Adafruit 571 layout}
+  - {name: M12 8-pin A-coded panel receptacle, solder cup (x2), vendor: other, url: https://www.amazon.com/Bulkhead-Connector-Receptacles-Straight-Waterproof/dp/B09LD3F1S5, qty: 2, price: 9.00, note: connector card; nut/flange <= 17 mm, body <= 18 mm behind the card. Pick with Brian}
+  - {name: M2.5 x 25 (x3 shell), x 10 (x2 base), x 8 (x2 sled), x 16 (x4 ADS stack), vendor: other, url: https://www.mcmaster.com/, qty: 11, price: 0.10, owned: true, note: all from the owned kit; plus 2 owned inserts for the tray column tops}
+  - {name: M2.5 x 8 self-tap (x2 card) and M2.5 x 6 (x2 proto), vendor: other, url: https://www.mcmaster.com/, qty: 4, price: 0.10, owned: true, note: from the owned assortment}
+  - {name: STEMMA QT cable 50 mm (ADS hairpin), vendor: adafruit, pid: 4399, qty: 1, owned: true, note: lower ADS front -> upper ADS front}
+  - {name: STEMMA QT cable 100 mm (drop slot), vendor: adafruit, pid: 4210, qty: 1, owned: true, note: SHT41 rear -> upper ADS rear}
